@@ -1,0 +1,44 @@
+Running SLURM prolog script on indigo60.cluster.local
+===============================================================================
+Job started on Wed Feb 16 15:11:10 GMT 2022
+Job ID          : 1074843
+Job name        : Agent
+WorkDir         : /mainfs/scratch/mjad1g20/PhenoGame/ray/ddpg
+Command         : /mainfs/scratch/mjad1g20/PhenoGame/ray/ddpg/submit
+Partition       : gpu
+Num hosts       : 1
+Num cores       : 8
+Num of tasks    : 8
+Hosts allocated : indigo60
+Job Output Follows ...
+===============================================================================
+module load tmux
+Python 3.8.12
+/home/mjad1g20/.conda/envs/rrlib/bin/python
+2022-02-16 15:12:17,093	INFO simple_q.py:153 -- In multi-agent mode, policies will be optimized sequentially by the multi-GPU optimizer. Consider setting `simple_optimizer=True` if this doesn't work for you.
+2022-02-16 15:12:17,093	INFO trainer.py:790 -- Current log_level is WARN. For more information, set 'log_level': 'INFO' / 'DEBUG' or use the -v and -vv flags.
+2022-02-16 15:13:10,121	WARNING deprecation.py:45 -- DeprecationWarning: `rllib.env.remote_vector_env.RemoteVectorEnv` has been deprecated. Use `ray.rllib.env.remote_base_env.RemoteBaseEnv` instead. This will raise an error in the future!
+2022-02-16 15:13:10,123	INFO trainable.py:125 -- Trainable.setup took 53.035 seconds. If your trainable is slow to initialize, consider setting reuse_actors=True to reduce actor creation overheads.
+2022-02-16 15:13:10,124	WARNING util.py:55 -- Install gputil for GPU system monitoring.
+2022-02-16 18:32:06,061	WARNING deprecation.py:45 -- DeprecationWarning: `clear_buffer` has been deprecated. Use `Filter.reset_buffer()` instead. This will raise an error in the future!
+slurmstepd-indigo60: error: *** JOB 1074843 ON indigo60 CANCELLED AT 2022-02-16T19:11:34 DUE TO TIME LIMIT ***
+==============================================================================
+Running epilogue script on indigo60.
+
+Submit time  : 2022-02-16T14:47:29
+Start time   : 2022-02-16T15:11:10
+End time     : 2022-02-16T19:11:34
+Elapsed time : 04:00:24 (Timelimit=04:00:00)
+
+Job ID: 1074843
+Cluster: i5
+User/Group: mjad1g20/wf
+State: TIMEOUT (exit code 0)
+Nodes: 1
+Cores per node: 8
+CPU Utilized: 00:00:01
+CPU Efficiency: 0.00% of 1-08:03:12 core-walltime
+Job Wall-clock time: 04:00:24
+Memory Utilized: 3.80 GB
+Memory Efficiency: 0.00% of 0.00 MB
+

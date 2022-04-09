@@ -1,0 +1,131 @@
+Running SLURM prolog script on red041.cluster.local
+===============================================================================
+Job started on Thu Mar 17 17:39:44 GMT 2022
+Job ID          : 1209162
+Job name        : RLlibPheno
+WorkDir         : /mainfs/scratch/mjad1g20/PhenoGame/ray/CartPole
+Command         : /mainfs/scratch/mjad1g20/PhenoGame/ray/CartPole/submit_single_cpu.sh
+Partition       : batch
+Num hosts       : 1
+Num cores       : 40
+Num of tasks    : 1
+Hosts allocated : red041
+Job Output Follows ...
+===============================================================================
+2022-03-17 17:41:34,186	WARNING ray_trial_executor.py:687 -- Over the last 60 seconds, the Tune event loop has been backlogged processing new results. Consider increasing your period of result reporting to improve performance.
+[2m[36m(PPOTrainer pid=109894)[0m 2022-03-17 17:41:34,171	ERROR worker.py:432 -- Exception raised in creation task: The actor died because of an error raised in its creation task, [36mray::PPOTrainer.__init__()[39m (pid=109894, ip=10.13.32.41)
+[2m[36m(PPOTrainer pid=109894)[0m   File "/home/mjad1g20/.conda/envs/rrlib/lib/python3.8/site-packages/ray/rllib/agents/trainer.py", line 728, in __init__
+[2m[36m(PPOTrainer pid=109894)[0m     super().__init__(config, logger_creator, remote_checkpoint_dir,
+[2m[36m(PPOTrainer pid=109894)[0m   File "/home/mjad1g20/.conda/envs/rrlib/lib/python3.8/site-packages/ray/tune/trainable.py", line 122, in __init__
+[2m[36m(PPOTrainer pid=109894)[0m     self.setup(copy.deepcopy(self.config))
+[2m[36m(PPOTrainer pid=109894)[0m   File "/home/mjad1g20/.conda/envs/rrlib/lib/python3.8/site-packages/ray/rllib/agents/trainer.py", line 741, in setup
+[2m[36m(PPOTrainer pid=109894)[0m     self.config = self.merge_trainer_configs(
+[2m[36m(PPOTrainer pid=109894)[0m   File "/home/mjad1g20/.conda/envs/rrlib/lib/python3.8/site-packages/ray/rllib/agents/trainer.py", line 1991, in merge_trainer_configs
+[2m[36m(PPOTrainer pid=109894)[0m     return deep_update(config1, config2, _allow_unknown_configs,
+[2m[36m(PPOTrainer pid=109894)[0m   File "/home/mjad1g20/.conda/envs/rrlib/lib/python3.8/site-packages/ray/util/ml_utils/dict.py", line 51, in deep_update
+[2m[36m(PPOTrainer pid=109894)[0m     raise Exception("Unknown config parameter `{}` ".format(k))
+[2m[36m(PPOTrainer pid=109894)[0m Exception: Unknown config parameter `use_lstm`
+2022-03-17 17:41:34,187	ERROR trial_runner.py:927 -- Trial PPO_PhenoEnvContinuous-v0_505da_00000: Error processing event.
+Traceback (most recent call last):
+  File "/home/mjad1g20/.conda/envs/rrlib/lib/python3.8/site-packages/ray/tune/trial_runner.py", line 893, in _process_trial
+    results = self.trial_executor.fetch_result(trial)
+  File "/home/mjad1g20/.conda/envs/rrlib/lib/python3.8/site-packages/ray/tune/ray_trial_executor.py", line 707, in fetch_result
+    result = ray.get(trial_future[0], timeout=DEFAULT_GET_TIMEOUT)
+  File "/home/mjad1g20/.conda/envs/rrlib/lib/python3.8/site-packages/ray/_private/client_mode_hook.py", line 105, in wrapper
+    return func(*args, **kwargs)
+  File "/home/mjad1g20/.conda/envs/rrlib/lib/python3.8/site-packages/ray/worker.py", line 1735, in get
+    raise value
+ray.exceptions.RayActorError: The actor died because of an error raised in its creation task, [36mray::PPOTrainer.__init__()[39m (pid=109894, ip=10.13.32.41)
+  File "/home/mjad1g20/.conda/envs/rrlib/lib/python3.8/site-packages/ray/rllib/agents/trainer.py", line 728, in __init__
+    super().__init__(config, logger_creator, remote_checkpoint_dir,
+  File "/home/mjad1g20/.conda/envs/rrlib/lib/python3.8/site-packages/ray/tune/trainable.py", line 122, in __init__
+    self.setup(copy.deepcopy(self.config))
+  File "/home/mjad1g20/.conda/envs/rrlib/lib/python3.8/site-packages/ray/rllib/agents/trainer.py", line 741, in setup
+    self.config = self.merge_trainer_configs(
+  File "/home/mjad1g20/.conda/envs/rrlib/lib/python3.8/site-packages/ray/rllib/agents/trainer.py", line 1991, in merge_trainer_configs
+    return deep_update(config1, config2, _allow_unknown_configs,
+  File "/home/mjad1g20/.conda/envs/rrlib/lib/python3.8/site-packages/ray/util/ml_utils/dict.py", line 51, in deep_update
+    raise Exception("Unknown config parameter `{}` ".format(k))
+Exception: Unknown config parameter `use_lstm`
+Namespace(local_mode=False, name_env='PhenoEnvContinuous-v0', num_cpus=39, num_gpus=0, redis_password=None, run='PPO')
+== Status ==
+Current time: 2022-03-17 17:41:34 (running for 00:01:08.30)
+Memory usage on this node: 30.7/188.6 GiB
+Using FIFO scheduling algorithm.
+Resources requested: 39.0/40 CPUs, 0/0 GPUs, 0.0/108.66 GiB heap, 0.0/50.56 GiB objects
+Result logdir: /scratch/mjad1g20/ray_results/pheno_test_1/PhenoEnvContinuous-v0
+Number of trials: 1/1 (1 RUNNING)
++---------------------------------------+----------+-------+
+| Trial name                            | status   | loc   |
+|---------------------------------------+----------+-------|
+| PPO_PhenoEnvContinuous-v0_505da_00000 | RUNNING  |       |
++---------------------------------------+----------+-------+
+
+
+Result for PPO_PhenoEnvContinuous-v0_505da_00000:
+  trial_id: 505da_00000
+  
+== Status ==
+Current time: 2022-03-17 17:41:34 (running for 00:01:08.38)
+Memory usage on this node: 30.7/188.6 GiB
+Using FIFO scheduling algorithm.
+Resources requested: 0/40 CPUs, 0/0 GPUs, 0.0/108.66 GiB heap, 0.0/50.56 GiB objects
+Result logdir: /scratch/mjad1g20/ray_results/pheno_test_1/PhenoEnvContinuous-v0
+Number of trials: 1/1 (1 ERROR)
++---------------------------------------+----------+-------+
+| Trial name                            | status   | loc   |
+|---------------------------------------+----------+-------|
+| PPO_PhenoEnvContinuous-v0_505da_00000 | ERROR    |       |
++---------------------------------------+----------+-------+
+Number of errored trials: 1
++---------------------------------------+--------------+----------------------------------------------------------------------------------------------------------------------------------------+
+| Trial name                            |   # failures | error file                                                                                                                             |
+|---------------------------------------+--------------+----------------------------------------------------------------------------------------------------------------------------------------|
+| PPO_PhenoEnvContinuous-v0_505da_00000 |            1 | /scratch/mjad1g20/ray_results/pheno_test_1/PhenoEnvContinuous-v0/PPO_PhenoEnvContinuous-v0_505da_00000_0_2022-03-17_17-41-17/error.txt |
++---------------------------------------+--------------+----------------------------------------------------------------------------------------------------------------------------------------+
+
+== Status ==
+Current time: 2022-03-17 17:41:34 (running for 00:01:08.39)
+Memory usage on this node: 30.7/188.6 GiB
+Using FIFO scheduling algorithm.
+Resources requested: 0/40 CPUs, 0/0 GPUs, 0.0/108.66 GiB heap, 0.0/50.56 GiB objects
+Result logdir: /scratch/mjad1g20/ray_results/pheno_test_1/PhenoEnvContinuous-v0
+Number of trials: 1/1 (1 ERROR)
++---------------------------------------+----------+-------+
+| Trial name                            | status   | loc   |
+|---------------------------------------+----------+-------|
+| PPO_PhenoEnvContinuous-v0_505da_00000 | ERROR    |       |
++---------------------------------------+----------+-------+
+Number of errored trials: 1
++---------------------------------------+--------------+----------------------------------------------------------------------------------------------------------------------------------------+
+| Trial name                            |   # failures | error file                                                                                                                             |
+|---------------------------------------+--------------+----------------------------------------------------------------------------------------------------------------------------------------|
+| PPO_PhenoEnvContinuous-v0_505da_00000 |            1 | /scratch/mjad1g20/ray_results/pheno_test_1/PhenoEnvContinuous-v0/PPO_PhenoEnvContinuous-v0_505da_00000_0_2022-03-17_17-41-17/error.txt |
++---------------------------------------+--------------+----------------------------------------------------------------------------------------------------------------------------------------+
+
+Traceback (most recent call last):
+  File "simple_trainer_ppo.py", line 34, in <module>
+    tune.run(
+  File "/home/mjad1g20/.conda/envs/rrlib/lib/python3.8/site-packages/ray/tune/tune.py", line 630, in run
+    raise TuneError("Trials did not complete", incomplete_trials)
+ray.tune.error.TuneError: ('Trials did not complete', [PPO_PhenoEnvContinuous-v0_505da_00000])
+==============================================================================
+Running epilogue script on red041.
+
+Submit time  : 2022-03-17T17:39:23
+Start time   : 2022-03-17T17:39:42
+End time     : 2022-03-17T17:41:36
+Elapsed time : 00:01:54 (Timelimit=06:00:00)
+
+Job ID: 1209162
+Cluster: i5
+User/Group: mjad1g20/wf
+State: FAILED (exit code 1)
+Nodes: 1
+Cores per node: 40
+CPU Utilized: 00:00:49
+CPU Efficiency: 1.07% of 01:16:00 core-walltime
+Job Wall-clock time: 00:01:54
+Memory Utilized: 3.65 GB
+Memory Efficiency: 2.33% of 156.25 GB
+

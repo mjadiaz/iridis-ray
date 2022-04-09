@@ -1,0 +1,35 @@
+Running SLURM prolog script on red068.cluster.local
+===============================================================================
+Job started on Thu Mar 17 15:53:19 GMT 2022
+Job ID          : 1207486
+Job name        : RLlibPheno
+WorkDir         : /mainfs/scratch/mjad1g20/PhenoGame/ray/CartPole
+Command         : /mainfs/scratch/mjad1g20/PhenoGame/ray/CartPole/submit_single_cpu.sh
+Partition       : batch
+Num hosts       : 1
+Num cores       : 40
+Num of tasks    : 1
+Hosts allocated : red068
+Job Output Follows ...
+===============================================================================
+slurmstepd-red068: error: *** JOB 1207486 ON red068 CANCELLED AT 2022-03-17T21:53:21 DUE TO TIME LIMIT ***
+==============================================================================
+Running epilogue script on red068.
+
+Submit time  : 2022-03-17T15:48:01
+Start time   : 2022-03-17T15:53:17
+End time     : 2022-03-17T21:53:21
+Elapsed time : 06:00:04 (Timelimit=06:00:00)
+
+Job ID: 1207486
+Cluster: i5
+User/Group: mjad1g20/wf
+State: TIMEOUT (exit code 0)
+Nodes: 1
+Cores per node: 40
+CPU Utilized: 00:00:01
+CPU Efficiency: 0.00% of 10-00:02:40 core-walltime
+Job Wall-clock time: 06:00:04
+Memory Utilized: 19.74 GB
+Memory Efficiency: 12.63% of 156.25 GB
+
